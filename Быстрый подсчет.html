@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Пятерошный помошник</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        
+        
+        <style>
+
+            html {
+                font-family: "Roboto", sans-serif;
+                background: linear-gradient(to bottom right, #5c8aa8 0%, #ff33cc 100%) no-repeat;
+                height: 100%;
+                color: whitesmoke;
+            }
+            h1{
+                width: 100%;
+                font-size: 30px;
+                font-weight: bold;    
+            }
+            p1 {
+                width: 100%;
+                font-size: 30px;
+                font-weight: bold;    
+            }
+            input {
+                display: block;
+                border: none;
+                background: rgba(255, 255, 255, .5);
+                border-radius: 10px;
+                padding: 20px;
+                outline: none;
+                width: 100%;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            #month_select {
+                display: block;
+                border: solid;
+                background: rgba(255, 255, 255, .5);
+                border-radius: 10px;
+                padding: 20px;
+                outline: none;
+                width: 100%;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            option {
+                background: rgba(255, 255, 255, .5);
+                color: rgb(61, 61, 61);
+            }
+            #butt {
+                display: block;
+                margin-top: 15px;
+                border: none;
+                background: rgba(255, 255, 255, .5);
+                border-radius: 10px;
+                padding: 20px;
+                outline: none;
+                width: 100%;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            #butt:hover {
+                opacity: .9;
+            }
+
+        </style>
+
+
+    </head>
+    <body>
+
+        <h1>Внесите данные ниже</h1>
+
+        
+
+        <p1>Дней в месяце:</p1>
+        <select id="month_select" name="greedy">
+            <option>28</option>
+            <option>29</option>
+            <option>30</option>
+            <option>31</option>
+        </select>
+
+        <p1>Плановый РТО:</p1>
+        <input id="RTOplan_input" name="envy" type="number" placeholder="Введите число">
+
+        <p1>Обще число покупок:</p1>
+       <input id="shop_input", name="horny" type="number" placeholder="Введите число">
+
+        <p1>Количество сотрудников:</p1>
+        <input id="worker_input" name="hate" type="number" placeholder="Введите число">
+
+        <div id="butted">
+            
+            <button id="butt" v-on:click="butts">Посчитать</button>
+
+        </div>
+
+        <script type="text/javascript">
+
+            var butter = new Vue({
+
+                el: "#butted",
+
+                methods : {
+
+                    butts : function(event){
+                    
+                        RTOplan = document.querySelector("[name='envy']").value,
+                        shop = document.querySelector("[name='horny']").value,
+                        worker = document.querySelector("[name='hate']").value,
+                        month = document.querySelector("[name='greedy']").value,
+                    
+                        RTO = (RTOplan / month),
+                        Check = (RTO / month),
+                        Traffic = (shop / month),
+                        Income = (RTO / worker) 
+                        if (event) {
+
+                            alert("РТО план = " + RTOplan + "\n" + "РТО факт = " + RTO + "\n" + "Общее кол-во покупок = " + shop + "\n" + "Средний чек = " + Check + "\n" + "Траффик = " + Traffic + "\n" + "Кол-во сотрудников = " + worker + "\n" + "Выработка на сотрудника = " + Income)
+
+                        }
+
+                    }
+
+                }
+
+            })
+
+        </script>
+    </body>
+</html>
