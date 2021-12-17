@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Пятерошный помошник</title>
+        <title>Скоба-помошник</title>
 		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         
         
@@ -50,7 +50,7 @@
                 background: rgba(255, 255, 255, .5);
                 color: rgb(61, 61, 61);
             }
-            #butt {
+            #business {
                 display: block;
                 margin-top: 15px;
                 border: none;
@@ -62,7 +62,7 @@
                 font-size: 30px;
                 font-weight: bold;
             }
-            #butt:hover {
+            #business:hover {
                 opacity: .9;
             }
 
@@ -88,36 +88,38 @@
         <input id="RTOplan_input" name="envy" type="number" placeholder="Введите число">
 
         <p1>Обще число покупок:</p1>
-       <input id="shop_input", name="horny" type="number" placeholder="Введите число">
+       <input id="shop_input", name="horn" type="number" placeholder="Введите число">
 
         <p1>Количество сотрудников:</p1>
         <input id="worker_input" name="hate" type="number" placeholder="Введите число">
 
-        <div id="butted">
+        <div id="bartender">
             
-            <button id="butt" v-on:click="butts">Посчитать</button>
+            <button id="business" v-on:click="bjorn">Посчитать</button>
 
         </div>
 
         <script type="text/javascript">
 
-            var butter = new Vue({
+            var bartender = new Vue({
 
                 el: "#butted",
 
                 methods : {
 
-                    butts : function(event){
-                    
+                    business : function(event){
+                    <!-- Сделать обращение к БД JSON, как только получу ключ к серверу -->                    
                         RTOplan = document.querySelector("[name='envy']").value,
                         shop = document.querySelector("[name='horny']").value,
                         worker = document.querySelector("[name='hate']").value,
                         month = document.querySelector("[name='greedy']").value,
-                    
+				
+                    <!-- Сделать обращение к БД JSON, как только получу ключ к серверу -->
                         RTO = (RTOplan / month),
                         Check = (RTO / month),
                         Traffic = (shop / month),
                         Income = (RTO / worker) 
+		    <!-- Эту часть впоследствии пересобрать с логикой и БД с подключением -->
                         if (event) {
 
                             alert("РТО план = " + RTOplan + "\n" + "РТО факт = " + RTO + "\n" + "Общее кол-во покупок = " + shop + "\n" + "Средний чек = " + Check + "\n" + "Траффик = " + Traffic + "\n" + "Кол-во сотрудников = " + worker + "\n" + "Выработка на сотрудника = " + Income)
